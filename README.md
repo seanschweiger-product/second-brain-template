@@ -4,7 +4,7 @@
 
 This is a template for a *second brain* that maintains itself. You drop raw material in (meeting notes, transcripts, documents, half-formed thoughts) and an LLM agent — Claude Code — compiles it into a persistent, synthesized, interlinked wiki that you browse in [Obsidian](https://obsidian.md). Knowledge **accumulates and compounds** instead of being re-derived every session.
 
-The pattern is inspired by two ideas Andrej Karpathy has written about: the *append-and-review note* (one place where everything you capture goes, no upfront organizing) and the *LLM-compiled personal wiki* (raw notes are source code; the LLM is the compiler; the wiki is the build output).
+The pattern comes from two things Andrej Karpathy published in April 2026: his [X post on LLM Knowledge Bases](https://x.com/karpathy/status/2039805659525644595) and the follow-up ["LLM Wiki" idea file](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) on GitHub Gist. The analogy is compilation: raw notes are source code, the LLM is the compiler, the wiki is the optimized build output — compile once, query cheaply forever.
 
 ---
 
@@ -80,5 +80,5 @@ If you use Claude Code with connected tools (Slack, Jira, Google Drive, Calendar
 
 ## Credits
 
-- Pattern: [Andrej Karpathy](https://karpathy.ai)'s writing on append-and-review notes and LLM-compiled wikis.
+- Pattern: [Andrej Karpathy](https://karpathy.ai) — the [LLM Knowledge Bases post on X](https://x.com/karpathy/status/2039805659525644595) (Apr 3, 2026) and the [LLM Wiki idea file](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) (GitHub Gist, Apr 4, 2026).
 - Built and battle-tested by [Sean Schweiger](https://github.com/seanschweiger-product) as a daily-driver work brain, then extracted into this template.
