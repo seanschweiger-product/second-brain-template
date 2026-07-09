@@ -1,14 +1,11 @@
-# Ingest Skill
-
-> Load and follow this file every time the user says "ingest," "process," or asks to add new information to the wiki.
-
+---
+name: ingest
+description: Compile new raw sources into the wiki. Use when the user says "ingest" or "process", drops files in raw/, or pastes content saying "add this to the brain". Follows the full intake protocol — orient, extract, connect, write, index, log, digest.
 ---
 
-## What triggers this skill
+# Ingest — compile raw sources into the wiki
 
-- The user says "ingest"
-- The user drops a file in `raw/` and asks to process it
-- The user pastes information directly in chat and says "add this to the brain"
+> Follow every step, in order, every time. Token cost is not a reason to skip steps.
 
 ---
 
@@ -54,7 +51,7 @@ Before writing anything to the wiki, answer all of these:
 
 After answering the Step 3 questions from the raw file, **actively query connected tools** for every entity that appears — a person, a ticket, a topic, a decision, a doc. Skipping a connector means missing real data that exists nowhere else.
 
-**The hard rule: every entity gets checked against every connector, not just the "obvious" one.** It's tempting to map name→Slack, ticket→issue tracker, topic→docs and stop — that's a sequential checklist, and it's exactly how real cross-source connections get missed. A person's real picture often lives split across three or four connectors at once (a chat message references a ticket which links a doc which was discussed in a calendar meeting).
+**The hard rule: every entity gets checked against every connector, not just the "obvious" one.** It's tempting to map name→chat, ticket→issue tracker, topic→docs and stop — that's a sequential checklist, and it's exactly how real cross-source connections get missed. A person's real picture often lives split across three or four connectors at once (a chat message references a ticket which links a doc which was discussed in a calendar meeting).
 
 Starting points per entity type (not a ceiling — go past these):
 
@@ -88,6 +85,7 @@ Any living status page must reflect what actually happened, not a snapshot from 
 
 For each existing page that's touched: open it, add the new information, update the `updated:` date.
 For each new entity (person, project, concept): create a new page using the standard format from `WIKI-SCHEMA.md`.
+If the source is a meeting transcript/notes: create the meeting page first (`wiki/meetings/YYYY-MM-DD-<slug>.md`), then propagate the synthesis into people/concept/project pages.
 Add `[[wikilinks]]` for every connection identified in Step 3.
 Every new page must link to at least one existing page. No orphans.
 

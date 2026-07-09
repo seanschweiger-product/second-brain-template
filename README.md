@@ -34,14 +34,15 @@ You never write in `wiki/`. Claude never writes in `raw/`. That separation is th
 1. **Use this template** → create your own repo (button at the top of this page), then clone it. Or just download the folder.
 2. **Install [Obsidian](https://obsidian.md)** and open the cloned folder as a vault (*Open folder as vault*).
 3. **Install [Claude Code](https://claude.com/claude-code)** and open a terminal in the same folder.
-4. Drop `raw/example-meeting-note.md` is already there for you — just type **`ingest`** in Claude Code and watch it compile.
+4. `raw/example-meeting-note.md` is already there for you — just type **`/ingest`** in Claude Code and watch it compile.
 5. Open `wiki/index.md` in Obsidian and switch to graph view. Your brain is alive.
 
 From then on, the loop is:
 
 - **After a meeting / reading something / having an idea** → write or drop a file anywhere in `raw/`
-- **Say `ingest`** → Claude processes everything new, updates pages, links them, logs the change
+- **`/ingest`** → Claude processes everything new, updates pages, links them, logs the change
 - **Ask questions** → *"What are my open blockers?"*, *"What do I know about X?"* — Claude reads the wiki first, then answers
+- **`/lint` (monthly)** → maintenance pass: orphans, contradictions, superseded claims, index gaps, open questions
 
 ---
 
@@ -52,7 +53,8 @@ From then on, the loop is:
 | `HOW-TO-USE.md` | The human manual. Two zones, three workflows. Read this one. |
 | `WIKI-SCHEMA.md` | The **operating manual for Claude** — categories, page format, workflows, quality rules. This file *is* the system. |
 | `CLAUDE.md` | Auto-loaded by Claude Code every session; points Claude at the schema. |
-| `skills/ingest.md` | The full step-by-step ingest protocol Claude follows. |
+| `.claude/skills/ingest/` | The `/ingest` slash command — the full compile protocol. |
+| `.claude/skills/lint/` | The `/lint` slash command — the maintenance pass (orphans, contradictions, superseded claims, data gaps…). |
 | `raw/` | Your zone. Everything you capture goes here. Processed files move to `raw/processed/`. |
 | `wiki/` | Claude's zone. Compiled knowledge: people, meetings, projects, concepts, feedback, sessions, references. |
 | `wiki/index.md` | Table of contents — Claude's entry point for every question. |
@@ -66,6 +68,7 @@ From then on, the loop is:
 - **Synthesis, not storage.** A meeting transcript becomes: a meeting page, updates to each attendee's person page, updates to touched projects, new concept pages — all wikilinked.
 - **No orphans.** Every page must link to at least one other page. The graph stays connected, so retrieval stays cheap.
 - **An audit trail.** Every ingest appends to `wiki/log.md`. You can always see what the compiler did and correct it — and the corrections themselves become rules in `wiki/feedback/`.
+- **Maintenance is a command, not a chore.** Human wikis die because the maintenance burden grows faster than the value. Here maintenance is `/lint` — a periodic pass that finds orphans, contradictions, superseded claims, and open questions, at near-zero cost to you.
 - **The schema evolves with you.** `WIKI-SCHEMA.md` isn't fixed doctrine. When you notice the system failing you, tell Claude to update the schema. The brain learns how to be a brain.
 
 ---

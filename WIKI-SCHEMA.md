@@ -2,7 +2,7 @@
 
 > **Read this first.** This document tells Claude Code how to operate this wiki. Load it at the start of every session before doing any wiki work.
 >
-> **For ingest operations:** follow the full protocol in `skills/ingest.md`.
+> **Two slash commands operate this wiki:** `/ingest` (compile new raw sources — `.claude/skills/ingest/SKILL.md`) and `/lint` (the maintenance pass — `.claude/skills/lint/SKILL.md`). Plain "ingest" / "lint" in chat triggers the same skills.
 
 ---
 
@@ -93,14 +93,19 @@ updated: YYYY-MM-DD
 
 ---
 
-## Lint checklist — run monthly or when asked
+## Lint checklist — run monthly or when asked (`/lint`)
+
+Full protocol in `.claude/skills/lint/SKILL.md`. The checks:
 
 - [ ] Orphan pages (no inbound links from anywhere)
 - [ ] Stale pages (updated >30 days ago, likely need a refresh)
+- [ ] Superseded claims (facts a newer source has overtaken — compare against recent meetings/log)
+- [ ] Contradictions (conflicting facts across pages — note on both pages, never silently pick a winner)
 - [ ] Missing entity pages (people or projects mentioned but no dedicated page)
-- [ ] Contradictions (conflicting facts across pages)
-- [ ] Index gaps (pages not listed in `wiki/index.md`)
+- [ ] Index gaps (pages not listed in `wiki/index.md`, or index rows pointing nowhere)
 - [ ] Missing cross-references (concepts mentioned but not wikilinked)
+- [ ] Format drift (pages off the standard format or naming conventions)
+- [ ] Data gaps (open questions the wiki raises but never answers — candidates for investigation)
 
 ---
 

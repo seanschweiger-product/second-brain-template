@@ -13,20 +13,24 @@
 
 ---
 
-## The three workflows
+## The four workflows
 
 ### 1. After a meeting
 In Obsidian: create a new note anywhere in `raw/`, write your notes and thoughts freely.
 Have the transcript? Drop it in `raw/` as well (same folder, different file).
-Then in Claude Code, say: **"ingest"**
+Then in Claude Code, type: **`/ingest`** (plain "ingest" works too)
 
 ### 2. Dropping a batch of files
-Drop everything in `raw/`. Say: **"ingest"**
+Drop everything in `raw/`. Type: **`/ingest`**
 Claude processes all new files it hasn't seen before, updates the wiki, and logs what changed.
 
 ### 3. Asking a question
 Just ask. Claude reads `wiki/index.md` first, finds the relevant pages, synthesizes an answer.
 Example: *"What are my open blockers?"* / *"What do I know about [person]?"*
+
+### 4. Once a month: maintenance
+Type: **`/lint`**
+Claude sweeps the whole wiki for orphan pages, contradictions, facts that newer sources have overtaken, index gaps, and unanswered questions — fixes the mechanical issues and asks you about the judgment calls. This is what keeps the brain from decaying the way human-maintained wikis do.
 
 ---
 
@@ -44,8 +48,9 @@ your-second-brain/
 ├── HOW-TO-USE.md       ← this file
 ├── WIKI-SCHEMA.md      ← Claude's operating instructions (you don't need to read this)
 ├── CLAUDE.md           ← loaded automatically by Claude Code each session
-├── skills/
-│   └── ingest.md       ← the full ingest protocol Claude follows
+├── .claude/skills/
+│   ├── ingest/         ← the /ingest slash command (the compile step)
+│   └── lint/           ← the /lint slash command (the maintenance pass)
 ├── raw/                ← EVERYTHING you bring in goes here
 │   └── processed/      ← Claude moves files here after ingesting them
 └── wiki/
