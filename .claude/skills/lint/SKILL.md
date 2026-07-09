@@ -28,7 +28,7 @@ Walk the whole `wiki/` tree and check:
 6. **Index gaps** — pages that exist but aren't listed in `wiki/index.md`, or index rows pointing at pages that don't exist.
 7. **Missing cross-references** — a concept/person/project named in prose but not wikilinked.
 8. **Format drift** — pages missing frontmatter, wrong category values, filenames off-convention, missing Links section.
-9. **Data gaps** — open questions the wiki raises but never answers (an "Uncertain" from an old ingest digest that was never resolved, an action item with no outcome). List them as candidates for investigation.
+9. **Data gaps** — open questions the wiki raises but never answers (an "Uncertain" from an old ingest digest that was never resolved, an action item with no outcome). Many can be filled directly with a web search or a connector query — do so when the answer is factual and checkable; flag the rest as candidates for investigation.
 
 ---
 

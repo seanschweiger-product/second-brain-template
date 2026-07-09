@@ -13,6 +13,8 @@ A Karpathy-pattern LLM wiki. Raw source documents are compiled by Claude into a 
 **The user's job**: curate sources, ask questions, direct analysis.
 **Claude's job**: ingest, synthesize, cross-reference, maintain, answer.
 
+Three core operations (per Karpathy's original post): **ingest** (compile new sources), **query** (answer from the wiki, file valuable answers back), **lint** (periodic health check so the wiki never decays).
+
 ---
 
 ## Zones
