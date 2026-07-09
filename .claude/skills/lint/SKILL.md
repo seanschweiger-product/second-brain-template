@@ -28,7 +28,8 @@ Walk the whole `wiki/` tree and check:
 6. **Index gaps** — pages that exist but aren't listed in `wiki/index.md`, or index rows pointing at pages that don't exist.
 7. **Missing cross-references** — a concept/person/project named in prose but not wikilinked.
 8. **Format drift** — pages missing frontmatter, wrong category values, filenames off-convention, missing Links section.
-9. **Data gaps** — open questions the wiki raises but never answers (an "Uncertain" from an old ingest digest that was never resolved, an action item with no outcome). Many can be filled directly with a web search or a connector query — do so when the answer is factual and checkable; flag the rest as candidates for investigation.
+9. **Data gaps** — open questions the wiki raises but never answers (an "Uncertain" from an old ingest digest that was never resolved, an action item with no outcome). Many can be imputed directly with a web search or a connector query — do so when the answer is factual and checkable; flag the rest as candidates for investigation.
+10. **New page candidates** — interesting connections across existing pages that deserve a page of their own: a theme recurring on 3+ pages, two concepts that keep appearing together, a pattern nobody has named yet. Propose these as new concept/synthesis pages.
 
 ---
 
@@ -47,9 +48,10 @@ Apply the approved fixes. Then append to `wiki/log.md`:
 
 ```
 ## [YYYY-MM-DD] lint | full pass
-**Checks run:** 9/9
+**Checks run:** 10/10
 **Fixed:** [list — orphans linked, index rows added, ...]
 **Flagged for user:** [contradictions/gaps awaiting a decision]
+**New page candidates:** [proposed, with the pages that suggested them]
 **Clean:** [checks that found nothing]
 ```
 
@@ -57,4 +59,4 @@ Apply the approved fixes. Then append to `wiki/log.md`:
 
 ## Step 5 — Digest
 
-End with a short summary in chat: what was fixed, what needs the user's decision, and the single most valuable thing to investigate next (usually the biggest data gap).
+End with a short summary in chat: what was fixed, what needs the user's decision, and **suggested further questions to ask the wiki** — the lint pass is also how the brain tells you what it's curious about (per Karpathy: "The LLMs are quite good at suggesting further questions to ask and look into").

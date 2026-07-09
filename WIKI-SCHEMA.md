@@ -107,7 +107,8 @@ Full protocol in `.claude/skills/lint/SKILL.md`. The checks:
 - [ ] Index gaps (pages not listed in `wiki/index.md`, or index rows pointing nowhere)
 - [ ] Missing cross-references (concepts mentioned but not wikilinked)
 - [ ] Format drift (pages off the standard format or naming conventions)
-- [ ] Data gaps (open questions the wiki raises but never answers — candidates for investigation)
+- [ ] Data gaps (open questions the wiki never answers — impute with web search/connectors where checkable)
+- [ ] New page candidates (interesting connections across existing pages that deserve their own page)
 
 ---
 
