@@ -31,15 +31,17 @@ You never write in `wiki/`. Claude never writes in `raw/`. That separation is th
 
 ## Quick start (5 minutes)
 
-1. **Use this template** → create your own repo (button at the top of this page), then clone it into a folder called `second-brain` in your home directory:
+1. Have [Claude Code](https://claude.com/claude-code) installed, then **copy-paste this into a terminal**:
    ```bash
-   git clone <your-repo-url> ~/second-brain
+   git clone https://github.com/seanschweiger-product/second-brain-template.git ~/second-brain
+   cd ~/second-brain
+   claude
    ```
-   (The last argument matters — without it, git names the folder after the repo and you'd get `second-brain-template`.)
-2. **Install [Obsidian](https://obsidian.md)** and open the cloned folder as a vault (*Open folder as vault*).
-3. **Install [Claude Code](https://claude.com/claude-code)** and open a terminal in the same folder.
-4. Type **`/setup`** — Claude interviews you briefly, adapts the wiki categories to your work, compiles your first note with you (the included `raw/example-meeting-note.md` works), and makes the skills usable from **any** folder on your machine.
-5. Open `wiki/index.md` in Obsidian and switch to graph view. Your brain is alive.
+   (The `~/second-brain` argument matters — without it, git names the folder after the repo and you'd get `second-brain-template`.)
+2. Type **`/setup`** and follow along — Claude interviews you briefly, adapts the wiki categories to *your* work, compiles your first note with you (the included `raw/example-meeting-note.md` works), and makes the skills usable from **any** folder on your machine.
+3. **Install [Obsidian](https://obsidian.md)**, open `~/second-brain` as a vault (*Open folder as vault*), and switch to graph view on `wiki/index.md`. Your brain is alive.
+
+> Want your own copy on GitHub (recommended, so your brain is backed up — in a **private** repo)? Use the **Use this template** button at the top of this page, and clone *your* repo's URL instead in step 1.
 
 From then on, the loop is:
 

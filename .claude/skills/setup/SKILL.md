@@ -35,7 +35,8 @@ Based on the answers, adapt the category table in `WIKI-SCHEMA.md`:
 
 Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` work from any directory:
 
-- Resolve **BRAIN** = this repo's absolute root path (must contain `WIKI-SCHEMA.md`).
+- Resolve **BRAIN** = this repo's absolute root path (must contain `WIKI-SCHEMA.md`). BRAIN is a placeholder for that path in the wrapper below — e.g. `/Users/dana/second-brain`.
+- Note: the "never `cd`" rule in the wrappers is an instruction to **Claude** for sessions running in *other* folders (stay in the user's project, reach into the brain by absolute path). It changes nothing for the user — starting a session with `cd ~/second-brain` remains the normal way to work inside the brain.
 - For each of `query`, `ingest`, `lint`: if `~/.claude/skills/<name>/SKILL.md` exists and points at a *different* brain, stop and ask which brain wins. Otherwise write:
 
 ```markdown
