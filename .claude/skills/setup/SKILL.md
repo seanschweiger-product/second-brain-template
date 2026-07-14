@@ -25,13 +25,21 @@ Based on the answers, adapt the category table in `WIKI-SCHEMA.md`:
 - Rename or add what's missing (a researcher → `papers/`, `experiments/`; a student → `courses/`; a freelancer → `clients/`), and create the matching `wiki/<category>/` folders with a `.gitkeep`.
 - Show the user the final category table and confirm before writing.
 
-## 3. Seed the brain from what already exists (the power step)
+## 3. Discovery scan → intake plan (the power step)
 
-An empty brain takes weeks to become useful. If the user already has a digital footprint, offer to seed from it — confirm scope with them first (which sources, how far back), then be thorough:
+An empty brain takes weeks to become useful. This step is a **deep scan of everything obtainable**, followed by a plan for absorbing it — the scan shows what the user's world is actually made of, which no interview can. Get their consent on scope first (it's their machine and their accounts), then be exhaustive, not polite:
 
-- **Existing Claude memories:** if this machine has Claude Code auto-memory (`~/.claude/projects/*/memory/`, `MEMORY.md`) or a personal `CLAUDE.md` with real context (who they are, their projects, working preferences) — offer to migrate the durable facts: people/project knowledge becomes wiki pages; working preferences become rules in `wiki/feedback/`.
-- **Connected tools:** if connectors are available (Slack, Jira, Confluence, Google Drive, Calendar…), offer a seeding sweep: recent calendar meetings → starter pages for frequent collaborators; active projects/tickets → project stubs with links to the source systems. Everything created follows the schema — linked, indexed, logged. No orphans.
-- **Existing documents:** if they have a folder of notes/docs anywhere, have them drop copies into `raw/` and run the full ingest protocol over the whole batch.
+**Scan — all of it, in parallel where possible:**
+
+- **Claude's own memories:** every auto-memory on this machine (`~/.claude/projects/*/memory/`, `MEMORY.md` files), personal and project `CLAUDE.md` files, existing `~/.claude/skills/`. This is knowledge Claude already accumulated about them — it belongs in the brain.
+- **Every available connector:** Calendar (who do they actually meet, how often), Slack (channels they live in), Jira/Confluence (active projects, docs they own), Drive/Gmail (recent working documents), and anything else connected. Check what's connected rather than assuming.
+- **The machine itself:** likely knowledge hotspots — `~/Documents`, `~/Desktop`, `~/Downloads`, notes-app exports, existing Obsidian vaults, meeting-transcript folders (Fathom/Gemini/Zoom downloads). Look for *clusters of knowledge files*, not every byte.
+
+**Report → plan → execute:**
+
+1. Present a **discovery report**: what exists, where, roughly how much, and what it says about how this person works.
+2. Propose an **intake plan** shaped by the report + the interview: what to migrate now (durable facts → people/project pages, preferences → `wiki/feedback/` rules), what to copy into `raw/` and batch-ingest, what to schedule for later, what to leave out. The report often reveals that the right categories differ from what the interview suggested — update the schema accordingly.
+3. Get approval, then run the full ingest protocol over the approved intake. Everything created follows the schema — linked, indexed, logged. No orphans.
 
 This step is the difference between "hello world" and a working brain on day one. Skip it only if the user has nothing yet — or declines.
 
