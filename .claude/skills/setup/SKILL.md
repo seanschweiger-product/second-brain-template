@@ -29,9 +29,15 @@ Based on the answers, adapt the category table in `WIKI-SCHEMA.md`:
 
 - If the user has a real document handy, have them drop it in `raw/` and use that. Otherwise use the included `raw/example-meeting-note.md`.
 - Run the full `/ingest` protocol (read `.claude/skills/ingest/SKILL.md` and follow it exactly).
-- Then show them the result: open `wiki/index.md`, point out the pages created and the `[[wikilinks]]`, and tell them to open the folder in Obsidian and switch to **graph view** — this is the "your brain is alive" moment.
+- Then show them the result: open `wiki/index.md`, point out the pages created and the `[[wikilinks]]`.
 
-## 4. Make it work from anywhere
+## 4. Obsidian — see the brain (optional, recommended)
+
+- Tell the user up front: **Obsidian is just a comfortable window into the brain — the brain itself is plain markdown files and works fully without it.** Skipping this step loses nothing except the pretty graph; it can be done any time later.
+- If they're in: check whether Obsidian is installed (macOS: does `/Applications/Obsidian.app` exist?). If missing, install it with `brew install --cask obsidian` when Homebrew is available; otherwise give them the download link (https://obsidian.md) and wait while they install.
+- Then walk them through it: open Obsidian → *Open folder as vault* → pick the brain folder → open `wiki/index.md` → switch to **graph view**. This is the "your brain is alive" moment.
+
+## 5. Make it work from anywhere
 
 Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` work from any directory:
 
@@ -56,7 +62,7 @@ The brain lives at `<BRAIN>`. Works from any working directory — use absolute 
 - For **ingest** only, prepend step 0: *"If the source is pasted text or files outside the brain, copy it into `<BRAIN>/raw/` first (copy — never move or modify the original)."*
 - List the three installed files back to the user.
 
-## 5. Crash course (close with exactly this, in your own words)
+## 6. Crash course (close with exactly this, in your own words)
 
 - **Capture:** drop anything in `raw/` → type `/ingest`. From any other folder too — `/ingest` now finds the brain.
 - **Ask:** `/query` anything — answers come with citations; ask *"how do you know?"* to see source quotes.
