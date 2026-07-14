@@ -27,14 +27,16 @@ Based on the answers, adapt the category table in `WIKI-SCHEMA.md`:
 
 ## 3. First ingest — together
 
-- If the user has a real document handy, have them drop it in `raw/` and use that. Otherwise use the included `raw/example-meeting-note.md`.
+- If the user has a real document handy, have them drop it in `raw/` and use that.
+- Otherwise, **write a short demo note yourself** into `raw/demo-meeting-note.md`: a fictional meeting (clearly invented names — nothing resembling their real colleagues), with 2–3 people, a project, a decision, a blocker, and one concept — enough to produce a nicely linked graph.
 - Run the full `/ingest` protocol (read `.claude/skills/ingest/SKILL.md` and follow it exactly).
 - Then show them the result: open `wiki/index.md`, point out the pages created and the `[[wikilinks]]`.
+- **If a demo note was used: clean up after the tour** — once the user has seen the graph (end of step 4), delete the demo note and every page generated from it, and remove their index/log rows, so no fictional data lingers in the brain. Tell the user you did.
 
 ## 4. Obsidian — see the brain (optional, recommended)
 
 - Tell the user up front: **Obsidian is just a comfortable window into the brain — the brain itself is plain markdown files and works fully without it.** Skipping this step loses nothing except the pretty graph; it can be done any time later.
-- If they're in: check whether Obsidian is installed (macOS: does `/Applications/Obsidian.app` exist?). If missing, install it with `brew install --cask obsidian` when Homebrew is available; otherwise give them the download link (https://obsidian.md) and wait while they install.
+- If they're in: check whether Obsidian is installed (macOS: does `/Applications/Obsidian.app` exist?). If missing, give them the download link — **https://obsidian.md** — and wait while they install (it's a normal app download, takes a minute). If they happen to have Homebrew, `brew install --cask obsidian` saves them the clicks — but don't assume they do.
 - Then walk them through it: open Obsidian → *Open folder as vault* → pick the brain folder → open `wiki/index.md` → switch to **graph view**. This is the "your brain is alive" moment.
 
 ## 5. Make it work from anywhere
