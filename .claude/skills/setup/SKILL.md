@@ -7,6 +7,8 @@ description: One-command onboarding for a fresh clone — personalize the brain 
 
 One package: interview → personalize → first ingest → global access → crash course. If the brain is already personalized (wiki has real pages, schema already edited), skip to whichever steps are missing — this skill is safe to re-run.
 
+**Moved the brain folder?** Re-run `/setup` from the new location — it rewrites the global pointers with the new path. Also migrate Claude Code's auto-memory: it lives under `~/.claude/projects/<old-path-key>/memory/` and is keyed by folder path, so copy that directory to the new path's key — otherwise Claude starts the new location with blank session memory (nothing is lost; it's just under the old key).
+
 ## 1. Interview the new owner (short — 3 questions max, one at a time)
 
 Ask, one question at a time, and wait for each answer:
