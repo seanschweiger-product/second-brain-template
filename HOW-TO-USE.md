@@ -2,6 +2,16 @@
 
 ---
 
+## First time here? One command.
+
+Open Claude Code in this folder and type: **`/setup`**
+
+Claude interviews you briefly (3 questions), adapts the wiki categories to *your* work, runs your first ingest with you, and makes the skills work from **any** folder on your machine — one package, done. Safe to re-run anytime; it skips what's already done.
+
+> **Can't see the `.claude` folder?** It's there — files starting with a dot are hidden by default. In Finder press `Cmd+Shift+.` to show them.
+
+---
+
 ## Two zones. That's it.
 
 | Zone | Who uses it | What goes there |
@@ -25,12 +35,13 @@ Drop everything in `raw/`. Type: **`/ingest`**
 Claude processes all new files it hasn't seen before, updates the wiki, and logs what changed.
 
 ### 3. Asking a question
-Just ask. Claude reads `wiki/index.md` first, finds the relevant pages, synthesizes an answer.
+Type **`/query`** and ask — or just ask plainly. Claude reads `wiki/index.md` first, finds the relevant pages, synthesizes an answer, and cites the pages it used. Every claim traces back to a file in `raw/` — ask *"how do you know?"* and Claude shows you the source quotes.
 Example: *"What are my open blockers?"* / *"What do I know about [person]?"*
 
 ### 4. Once a month: maintenance
 Type: **`/lint`**
 Claude sweeps the whole wiki for orphan pages, contradictions, facts that newer sources have overtaken, index gaps, and unanswered questions — fixes the mechanical issues and asks you about the judgment calls. This is what keeps the brain from decaying the way human-maintained wikis do.
+
 
 ---
 
@@ -48,9 +59,11 @@ your-second-brain/
 ├── HOW-TO-USE.md       ← this file
 ├── WIKI-SCHEMA.md      ← Claude's operating instructions (you don't need to read this)
 ├── CLAUDE.md           ← loaded automatically by Claude Code each session
-├── .claude/skills/
-│   ├── ingest/         ← the /ingest slash command (the compile step)
-│   └── lint/           ← the /lint slash command (the maintenance pass)
+├── .claude/skills/     ← hidden folder (Cmd+Shift+. in Finder shows it)
+│   ├── setup/          ← /setup — one-time onboarding: personalize + first ingest + use-from-anywhere
+│   ├── ingest/         ← /ingest — the compile step
+│   ├── query/          ← /query — answer questions from the wiki, with citations
+│   └── lint/           ← /lint — the monthly maintenance pass
 ├── raw/                ← EVERYTHING you bring in goes here
 │   └── processed/      ← Claude moves files here after ingesting them
 └── wiki/

@@ -31,10 +31,14 @@ You never write in `wiki/`. Claude never writes in `raw/`. That separation is th
 
 ## Quick start (5 minutes)
 
-1. **Use this template** → create your own repo (button at the top of this page), then clone it. Or just download the folder.
+1. **Use this template** → create your own repo (button at the top of this page), then clone it into a folder called `second-brain` in your home directory:
+   ```bash
+   git clone <your-repo-url> ~/second-brain
+   ```
+   (The last argument matters — without it, git names the folder after the repo and you'd get `second-brain-template`.)
 2. **Install [Obsidian](https://obsidian.md)** and open the cloned folder as a vault (*Open folder as vault*).
 3. **Install [Claude Code](https://claude.com/claude-code)** and open a terminal in the same folder.
-4. `raw/example-meeting-note.md` is already there for you — just type **`/ingest`** in Claude Code and watch it compile.
+4. Type **`/setup`** — Claude interviews you briefly, adapts the wiki categories to your work, compiles your first note with you (the included `raw/example-meeting-note.md` works), and makes the skills usable from **any** folder on your machine.
 5. Open `wiki/index.md` in Obsidian and switch to graph view. Your brain is alive.
 
 From then on, the loop is:
@@ -53,7 +57,9 @@ From then on, the loop is:
 | `HOW-TO-USE.md` | The human manual. Two zones, three workflows. Read this one. |
 | `WIKI-SCHEMA.md` | The **operating manual for Claude** — categories, page format, workflows, quality rules. This file *is* the system. |
 | `CLAUDE.md` | Auto-loaded by Claude Code every session; points Claude at the schema. |
+| `.claude/skills/setup/` | The `/setup` slash command — one-time onboarding: personalize the schema, first ingest, and use-from-any-folder install. |
 | `.claude/skills/ingest/` | The `/ingest` slash command — the full compile protocol. |
+| `.claude/skills/query/` | The `/query` slash command — answer questions from the wiki with citations; every claim traceable back to `raw/`. |
 | `.claude/skills/lint/` | The `/lint` slash command — the maintenance pass (orphans, contradictions, superseded claims, data gaps…). |
 | `raw/` | Your zone. Everything you capture goes here. Processed files move to `raw/processed/`. |
 | `wiki/` | Claude's zone. Compiled knowledge: people, meetings, projects, concepts, feedback, sessions, references. |
