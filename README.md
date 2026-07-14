@@ -90,7 +90,8 @@ If you use Claude Code with connected tools (Slack, Jira, Google Drive, Calendar
 
 ---
 
-## Credits
+## Credits & license
 
 - Pattern: [Andrej Karpathy](https://karpathy.ai) — the [LLM Knowledge Bases post on X](https://x.com/karpathy/status/2039805659525644595) (Apr 3, 2026) and the [LLM Wiki idea file](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) (GitHub Gist, Apr 4, 2026).
 - Built and battle-tested by [Sean Schweiger](https://github.com/seanschweiger-product) as a daily-driver work brain, then extracted into this template.
+- Licensed under the [MIT License](LICENSE) — use it, fork it, share it freely; just keep the credit.
