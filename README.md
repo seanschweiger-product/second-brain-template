@@ -64,7 +64,7 @@ From then on, the loop is:
 | `.claude/skills/ingest/` | The `/ingest` slash command — the full compile protocol. |
 | `.claude/skills/query/` | The `/query` slash command — answer questions from the wiki with citations; every claim traceable back to `raw/`. |
 | `.claude/skills/lint/` | The `/lint` slash command — the maintenance pass (orphans, contradictions, superseded claims, data gaps…). |
-| `raw/` | Your zone. Everything you capture goes here. Processed files move to `raw/processed/`. |
+| `raw/` | Your zone. Everything you capture goes here. Processed files get a dated name and move to `raw/processed/{meetings,docs,research,notes}/`. |
 | `wiki/` | Claude's zone. Compiled knowledge: people, meetings, projects, concepts, feedback, sessions, references. |
 | `wiki/index.md` | Table of contents — Claude's entry point for every question. |
 | `wiki/log.md` | Audit trail of every ingest. If it's growing, the brain is working. |

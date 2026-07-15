@@ -30,6 +30,12 @@ Walk the whole `wiki/` tree and check:
 8. **Format drift** — pages missing frontmatter, wrong category values, filenames off-convention, missing Links section.
 9. **Data gaps** — open questions the wiki raises but never answers (an "Uncertain" from an old ingest digest that was never resolved, an action item with no outcome). Many can be imputed directly with a web search or a connector query — do so when the answer is factual and checkable; flag the rest as candidates for investigation.
 10. **New page candidates** — interesting connections across existing pages that deserve a page of their own: a theme recurring on 3+ pages, two concepts that keep appearing together, a pattern nobody has named yet. Propose these as new concept/synthesis pages.
+11. **`raw/processed/` hygiene** — the counterpart of ingest Step 6:
+   - Loose files at `raw/processed/` top level (every file belongs in a category folder: `meetings/`, `docs/`, `research/`, `notes/`)
+   - Files that break the `YYYY-MM-DD-<topic>-<source>.<ext>` naming convention
+   - Files that look miscategorized (a transcript in `docs/`, a reflection in `research/`)
+   - **Subfolder sprawl** — ad-hoc subfolders that appeared inside the categories, or a category grown so large it's hard to scan. Propose either promoting a recurring cluster to an official category (update ingest Step 6 + WIKI-SCHEMA.md together) or merging strays back. Never restructure silently — this is a content fix, get the user's confirmation.
+   - **Dead source citations** — wiki pages citing a `raw/` path that no longer exists (file renamed/moved without updating the reference). Fix the path if the target is identifiable; otherwise flag.
 
 ---
 

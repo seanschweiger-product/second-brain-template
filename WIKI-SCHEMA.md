@@ -21,7 +21,7 @@ Three core operations (per Karpathy's original post): **ingest** (compile new so
 
 | Zone | Location | Rule |
 |---|---|---|
-| Raw sources | `raw/` | Notes the user writes, transcripts, PDFs, decks, exports. Claude reads and ingests, never modifies. Processed files move to `raw/processed/`. |
+| Raw sources | `raw/` | Notes the user writes, transcripts, PDFs, decks, exports. Claude reads and ingests, never modifies. Processed files are renamed `YYYY-MM-DD-<topic>-<source>.<ext>` and filed under `raw/processed/{meetings,docs,research,notes}/` by content type. |
 | Compiled knowledge | `wiki/` | Claude writes and maintains. The user reads in Obsidian, never writes here. |
 | Schema | `WIKI-SCHEMA.md` (this file) | Evolved together — when the system fails the user, update the schema. |
 
@@ -81,7 +81,7 @@ updated: YYYY-MM-DD
    - Key fact 1
    - Key fact 2
    ```
-8. Move the processed file to `raw/processed/`
+8. Rename the file to `YYYY-MM-DD-<topic>-<source>.<ext>` and move it to the matching category folder — `raw/processed/{meetings,docs,research,notes}/` (full rules in the ingest skill, Step 6)
 
 ---
 

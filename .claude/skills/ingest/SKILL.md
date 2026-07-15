@@ -106,9 +106,25 @@ Append to `wiki/log.md`:
 
 ---
 
-## Step 6 — Move the file
+## Step 6 — Categorize, rename, and move the file
 
-Move the processed source file from `raw/` to `raw/processed/`.
+Never drop a file loose into `raw/processed/` — every processed file gets a category folder and a conventional name, so nothing is ever buried in an unsorted pile.
+
+**6a. Pick the category folder by content type:**
+
+| Folder | What goes there |
+|---|---|
+| `raw/processed/meetings/` | Meeting transcripts and post-meeting debriefs |
+| `raw/processed/docs/` | External documents: decks, PDFs, guides, exports |
+| `raw/processed/research/` | Research and investigation outputs saved as sources |
+| `raw/processed/notes/` | The user's own reflections and thought dumps |
+
+If a file genuinely fits none of these, propose a new category folder to the user rather than forcing a bad fit.
+
+**6b. Rename to the convention:** `YYYY-MM-DD-<topic>-<source>.<ext>` — date first (the content's date, not today's), short kebab-case topic, source suffix when relevant (e.g. `-gemini`, `-fathom`, transcript tool name). Example: `Alex _ Sam Monday, July 13⋅11_30am.txt` → `2026-07-13-alex-sam-fathom.txt`.
+
+**6c. Move it** from `raw/` to the category folder, and **cite the new path** (`raw/processed/<category>/<new name>`) in every wiki page written in Step 4 — the provenance trail must point at the file's final resting place.
+
 This is the proof of completion. If a file is still in `raw/`, it hasn't been processed.
 
 ---
@@ -123,7 +139,7 @@ Ingested: [filename or description]
 Pages updated:  [list]
 Pages created:  [list or none]
 Links added:    [A → B, C → D]
-Moved to:       raw/processed/
+Moved to:       raw/processed/[category]/[new conventional name]
 ─────────────────────────────────
 Uncertain:      [flag anything you weren't sure how to connect]
 ```
