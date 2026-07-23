@@ -61,11 +61,12 @@ This step is the difference between "hello world" and a working brain on day one
 
 ## 6. Make it work from anywhere
 
-Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` work from any directory:
+Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` (and `/fathom`, if the user records meetings with Fathom) work from any directory:
 
 - Resolve **BRAIN** = this repo's absolute root path (must contain `WIKI-SCHEMA.md`). BRAIN is a placeholder for that path in the wrapper below — e.g. `/Users/dana/second-brain`.
 - Note: the "never `cd`" rule in the wrappers is an instruction to **Claude** for sessions running in *other* folders (stay in the user's project, reach into the brain by absolute path). It changes nothing for the user — starting a session with `cd ~/second-brain` remains the normal way to work inside the brain.
-- For each of `query`, `ingest`, `lint`: if `~/.claude/skills/<name>/SKILL.md` exists and points at a *different* brain, stop and ask which brain wins. Otherwise write:
+- Ask whether the user records meetings with [Fathom](https://fathom.video). If yes, include `fathom` in the list below; if no or unsure, skip it (it can be added later).
+- For each of `query`, `ingest`, `lint` (+ `fathom` if applicable): if `~/.claude/skills/<name>/SKILL.md` exists and points at a *different* brain, stop and ask which brain wins. Otherwise write:
 
 ```markdown
 ---
@@ -82,7 +83,7 @@ The brain lives at `<BRAIN>`. Works from any working directory — use absolute 
 ```
 
 - For **ingest** only, prepend step 0: *"If the source is pasted text or files outside the brain, copy it into `<BRAIN>/raw/` first (copy — never move or modify the original)."*
-- List the three installed files back to the user.
+- List the installed files back to the user.
 
 ## 7. Crash course (close with exactly this, in your own words)
 

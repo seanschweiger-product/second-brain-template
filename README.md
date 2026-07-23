@@ -64,6 +64,8 @@ From then on, the loop is:
 | `.claude/skills/ingest/` | The `/ingest` slash command — the full compile protocol. |
 | `.claude/skills/query/` | The `/query` slash command — answer questions from the wiki with citations; every claim traceable back to `raw/`. |
 | `.claude/skills/lint/` | The `/lint` slash command — the maintenance pass (orphans, contradictions, superseded claims, data gaps…). |
+| `.claude/skills/fathom/` | The `/fathom` slash command — one-button meeting sync: pull your newest [Fathom](https://fathom.video) recording (summary, action items, transcript) into `raw/` and ingest it. Optional — needs a Fathom account. |
+| `scripts/fathom_poll.py` | The fetcher behind `/fathom`. API key lives in `~/.fathom-api-key`, outside the repo. |
 | `raw/` | Your zone. Everything you capture goes here. Processed files get a dated name and move to `raw/processed/{meetings,docs,research,notes}/`. |
 | `wiki/` | Claude's zone. Compiled knowledge: people, meetings, projects, concepts, feedback, sessions, references. |
 | `wiki/index.md` | Table of contents — Claude's entry point for every question. |
