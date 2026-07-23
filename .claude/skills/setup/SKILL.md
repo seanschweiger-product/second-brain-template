@@ -61,12 +61,14 @@ This step is the difference between "hello world" and a working brain on day one
 
 ## 6. Make it work from anywhere
 
-Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` (and `/fathom`, if the user records meetings with Fathom) work from any directory:
+Skills normally load only when a session starts inside this folder. Install global pointers so `/query`, `/ingest`, `/lint` — plus the optional skills the user opts into — work from any directory:
 
 - Resolve **BRAIN** = this repo's absolute root path (must contain `WIKI-SCHEMA.md`). BRAIN is a placeholder for that path in the wrapper below — e.g. `/Users/dana/second-brain`.
 - Note: the "never `cd`" rule in the wrappers is an instruction to **Claude** for sessions running in *other* folders (stay in the user's project, reach into the brain by absolute path). It changes nothing for the user — starting a session with `cd ~/second-brain` remains the normal way to work inside the brain.
-- Ask whether the user records meetings with [Fathom](https://fathom.video). If yes, include `fathom` in the list below; if no or unsure, skip it (it can be added later).
-- For each of `query`, `ingest`, `lint` (+ `fathom` if applicable): if `~/.claude/skills/<name>/SKILL.md` exists and points at a *different* brain, stop and ask which brain wins. Otherwise write:
+- Offer the optional skills (skip any the user declines — all can be added later):
+  - `fathom` — if the user records meetings with [Fathom](https://fathom.video).
+  - `start-day` + `close-day` — if the user wants the daily ritual: a 3-line morning standup and a 2-line evening close, both driven by the brain's log.
+- For each of `query`, `ingest`, `lint` (+ the accepted optional skills): if `~/.claude/skills/<name>/SKILL.md` exists and points at a *different* brain, stop and ask which brain wins. Otherwise write:
 
 ```markdown
 ---
@@ -90,5 +92,6 @@ The brain lives at `<BRAIN>`. Works from any working directory — use absolute 
 - **Capture:** drop anything in `raw/` → type `/ingest`. From any other folder too — `/ingest` now finds the brain.
 - **Ask:** `/query` anything — answers come with citations; ask *"how do you know?"* to see source quotes.
 - **Maintain:** `/lint` once a month.
+- **Rhythm (if installed):** `/start-day` each morning — 3 lines, one task; `/close-day` each evening — 2 lines, one log entry.
 - **Correct:** when Claude gets something wrong, say so — the correction becomes a permanent rule in `wiki/feedback/`.
 - Full manual: `HOW-TO-USE.md`.
